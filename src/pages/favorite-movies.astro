@@ -1,0 +1,24 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import MovieCard from "../components/movie-card/MovieCard.astro";
+import { movieHook } from "../js/useMovie";
+
+
+const {
+  movieData,
+} = movieHook;
+
+---
+
+<MainLayout
+  title="Omiljeni filmovi"
+  description="Sadrži Slideshow omiljenih fotografija, linkove ka omiljenim stranicama i youtube snimcima."
+>
+  <div id="movie-list" class="d-flex flex-row flex-wrap border">
+    {movieData.map((movie, index) => (
+      <MovieCard {...movie} />
+    ))}
+  </div>
+
+</MainLayout>
+

@@ -1,0 +1,46 @@
+---
+import { Icon } from "astro-icon/components";
+
+import navData from "../data/navData";
+import Link from "./Link.astro";
+---
+<nav style={{
+  display: "flex",
+  margin: 0,
+  padding: 0,
+  position:"fixed",
+  top:0,
+  width:"100%",
+  maxWidth: "1200px",
+  minWidth: "320px",
+  backgroundColor: "#2d2c2e",
+  
+}}>
+        <ul class="nav-links" style={{
+          display: "flex",
+          flexDirection: "row",
+          margin: 0,
+          padding: 0,
+          overflowX: "auto",
+          
+        }}>
+          {
+            navData.map((item) => {
+              if(item.path==="/"){
+                return(
+                <a href={item.path} class="logo p-3" aria-label={item.name} data-navLink >
+                    <Icon name="logo" width={48} height={48} />
+                </a>
+                );
+              }
+              return(
+                <Link href={item.path} title={item.name} />
+              );
+            })
+          }
+        </ul>
+</nav>
+
+<script>
+    import "../js/nav.js";
+</script>

@@ -1,0 +1,36 @@
+.movie-card {
+  width: 50%;
+  position: relative;
+  min-height: min-content;
+  min-width: 375px;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  cursor: pointer;
+  .info {
+    width: 100%;
+    color: white;
+    position: absolute;
+    bottom: 0;
+    background: linear-gradient(0deg, #000000 0%, rgba(102, 102, 102, 0) 100%);
+  }
+  @media screen and (max-width: 768px) {
+    width: 100%;
+  }
+}
+.movie-card:hover img {
+  transition: transform 0.5s ease;
+  transform: scale(1.1);
+}
+
+.movie-card:hover .info {
+  transition: color 0.5s ease;
+  color: #fbbd0d !important;
+}
+
+.hover-movie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}

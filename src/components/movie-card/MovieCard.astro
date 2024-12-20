@@ -1,0 +1,53 @@
+---
+import "./MovieCard.style.scss";
+import {Image} from "astro:assets";
+
+interface Props {
+  id: number;
+  title: string;
+  director: string;
+  year: string;
+  country: string;
+  image: ImageMetadata;
+}
+
+const { id, title, director, year, country, image }: Props = Astro.props;
+---
+
+<div
+  data-id={id}
+  class="movie-card"
+>
+  <Image src={image} alt="A description of my image." class="hover-image" 
+  style={{
+      width: "100%",
+      height: "auto",
+  }} 
+  />
+  <div class="p-4 info">
+    <h2>{title.toUpperCase()}</h2>
+    <div>
+        <span>{director.toUpperCase()}</span> 
+        <span>{`${year} ${country}`.toUpperCase()}</span>
+    </div>
+  </div>
+</div>
+
+
+<script>
+ document.addEventListener("DOMContentLoaded", async() => {
+  const movieHook = await import("../../js/useMovie").then((mod) => mod.movieHook);
+  const movieCards = document.querySelectorAll(".movie-card");
+  movieCards.forEach((card) => {
+    if (card instanceof HTMLElement) {
+      const handleShow = () => {
+        const id = card.dataset.id;
+        if (id) {
+          movieHook.onShow(parseInt(id));
+        }
+      };
+      card.addEventListener("click", handleShow);
+    }
+  });
+});
+</script>

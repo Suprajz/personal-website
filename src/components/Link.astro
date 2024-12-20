@@ -1,0 +1,10 @@
+---
+interface Props {
+    title: string;
+    href: string;
+    className?: string;
+}
+
+const {href, title, className=""}:Props= Astro.props;
+---
+<a href={href} class={`link px-4 ${className}`} data-navLink >{title}</a>

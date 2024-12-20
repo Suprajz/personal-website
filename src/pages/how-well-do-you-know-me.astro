@@ -1,0 +1,57 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+
+---
+
+<MainLayout  title="Koliko me znaš" description="Kviz znanja koji sadrži 10 pitanja vezana za mene.">
+	<div class="banner border">
+		<span class="d-flex p-5 banner-text">
+			
+				<h1 class="py-2" style={{
+					textAlign: "center",
+					backgroundColor: "white",
+				}}>UPUTSTVO</h1>
+				<ul class="list-group" style={{
+					margin: "0 auto",
+				}}>
+					<li class="list-group-item">Kviz sadrži 10 pitanja.</li>
+					<li class="list-group-item">Svako pitanje ima 3 ponuđena odgovora.</li>
+					<li class="list-group-item">Svako tačno odgovoreno pitanje donosi 1 poen.</li>
+					<li class="list-group-item">Kviz traje 10 minuta.</li>
+					<li class="list-group-item">Nakon završetka kviza možeš videti svoj rezultat.</li>
+				</ul>	
+				<button id="start-quiz" style={{
+					fontWeight: "bold"
+				}} class="btn btn-dark w-100 py-4 mt-4 mb-2">ZAPOČNI KVIZ</button>
+				<button id="show-results" style={{
+					fontWeight: "bold"
+				}}  class="btn btn-light w-100 py-4 d-none">PRIKAŽI REZULTATE</button>
+			
+		</span>
+		</div>
+	<table class="table table-striped">
+		<tbody id="result-table-body" />
+	</table>
+
+</MainLayout>
+
+<script>
+	document.addEventListener("DOMContentLoaded", async() => {
+	 const quizHook = await import("../js/useQuiz").then((mod) => mod.quizHook);
+	 quizHook.getInitialResults();
+	 const showResultButton = document.getElementById("show-results");
+	 const startQuizButton = document.getElementById("start-quiz");
+	   if (startQuizButton instanceof HTMLElement) {
+		 const handleShow = () => {
+		   quizHook.onShow();
+		 };
+		 startQuizButton.addEventListener("click", handleShow);
+	   }
+	   if(quizHook.played && showResultButton instanceof HTMLElement){
+		showResultButton.classList.remove("d-none");
+		showResultButton.addEventListener("click", () => {
+			quizHook.onShowResults();
+		});
+	   };
+	 });
+   </script>
