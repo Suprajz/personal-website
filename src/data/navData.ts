@@ -1,7 +1,7 @@
 const navData = [
   {
     name: "O meni",
-    path: "/",
+    path: "/personal-website",
   },
   {
     name: "Omiljeni filmovi",
