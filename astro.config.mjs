@@ -6,6 +6,6 @@ import icon from "astro-icon";
 // https://astro.build/config
 export default defineConfig({
   integrations: [icon()],
-  output: "static",
-  base: "/personal-website/",
+  site: "https://suprajz.github.io",
+  base: "personal-website",
 });
