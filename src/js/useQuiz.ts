@@ -80,7 +80,7 @@ const useQuiz = () => {
     const modalContent = document.createElement("div");
     modalContent.id = "modal-content";
     modalContent.innerHTML = `
-      <div id="quiz-modal" class="p-5">
+      <div id="quiz-modal">
         <div id="quiz-modal-header">
           <div class="indicator-bar">
           ${quizHistory()
@@ -261,7 +261,7 @@ const useQuiz = () => {
     const modalContent = document.createElement("div");
     modalContent.id = "modal-content";
     modalContent.innerHTML = `
-      <div id="results-modal" class="p-5">
+      <div id="results-modal">
         <div class="p-4" id="results-modal-header">
           <div class="d-flex justify-content-between align-items-center">
             <h2 class="p-0 m-0">TOP 10 REZULTATA</h2>
