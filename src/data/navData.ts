@@ -5,15 +5,15 @@ const navData = [
   },
   {
     name: "Omiljeni filmovi",
-    path: "/favorite-movies",
+    path: "/personal-website/favorite-movies",
   },
   {
     name: "Koliko me znaš",
-    path: "/how-well-do-you-know-me",
+    path: "/personal-website/how-well-do-you-know-me",
   },
   {
     name: "Piši mi",
-    path: "/write-me",
+    path: "/personal-website/write-me",
   },
 ];
 
