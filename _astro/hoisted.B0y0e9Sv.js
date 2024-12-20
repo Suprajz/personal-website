@@ -1,0 +1,2 @@
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=["_astro/useMovie.CtyR24FI.js","_astro/close.BynY54YT.js"])))=>i.map(i=>d[i]);
+import{_ as i}from"./preload-helper.D-Q4cFOl.js";import"./hoisted.CYj0Nljy.js";document.addEventListener("DOMContentLoaded",async()=>{const t=await i(()=>import("./useMovie.CtyR24FI.js"),__vite__mapDeps([0,1])).then(o=>o.movieHook);document.querySelectorAll(".movie-card").forEach(o=>{if(o instanceof HTMLElement){const n=()=>{const e=o.dataset.id;e&&t.onShow(parseInt(e))};o.addEventListener("click",n)}})});
