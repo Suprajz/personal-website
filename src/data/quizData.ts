@@ -8,13 +8,13 @@ interface Props {
 export const quizData: Props[] = [
   {
     id: 1,
-    question: "Koje godine sam rodjen?",
+    question: "Koje godine sam rođen?",
     answers: ["1995", "2002", "2000"],
     correct: 0,
   },
   {
     id: 2,
-    question: "Koji mi je rekord u trcanju na 5km?",
+    question: "Koji mi je rekord u trčanju na 5km?",
     answers: ["25:04", "19:20", "20:51"],
     correct: 2,
   },
