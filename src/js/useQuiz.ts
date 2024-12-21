@@ -100,7 +100,7 @@ const useQuiz = () => {
         </div>
         <div id="quiz-modal-body">
           <div id="quiz-modal-body-info">
-            <h2>${quizData[index].question.toUpperCase()}</h2>
+            <h2 class="px-2 text-center">${quizData[index].question.toUpperCase()}</h2>
             <div class="d-flex flex-column">
               ${quizData[index].answers
                 .map(
@@ -262,13 +262,13 @@ const useQuiz = () => {
     modalContent.id = "modal-content";
     modalContent.innerHTML = `
       <div id="results-modal">
-        <div class="p-4" id="results-modal-header">
+        <div class="p-md-4 p-2" id="results-modal-header">
           <div class="d-flex justify-content-between align-items-center">
             <h2 class="p-0 m-0">TOP 10 REZULTATA</h2>
             <button id="close-results" class="btn btn-transparent"/>
           </div>
         </div>
-        <div class="p-4" id="results-modal-body">
+        <div class="p-md-4 p-2" id="results-modal-body">
           <table class="table table-striped">
             <thead>
               <tr>
